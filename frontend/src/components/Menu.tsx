@@ -16,10 +16,12 @@ import {
   bookmarkOutline,
   homeOutline,
   homeSharp,
-  alarmOutline,
-  alarmSharp,
+  bookOutline,
   callOutline,
-  callSharp
+  callSharp,
+  logInOutline,
+  logOutOutline,
+  personAddOutline,
 } from "ionicons/icons";
 import "./Menu.css";
 
@@ -38,10 +40,22 @@ const appPages: AppPage[] = [
     mdIcon: homeSharp,
   },
   {
-    title: "Rezerwacja",
-    url: "/page/reservation",
-    iosIcon: alarmOutline,
-    mdIcon: alarmSharp,
+    title: "Ksiązki",
+    url: "/page/books",
+    iosIcon: bookOutline,
+    mdIcon: bookOutline,
+  },
+  {
+    title: "Zaloguj się",
+    url: "/page/signin",
+    iosIcon: logInOutline,
+    mdIcon: logInOutline,
+  },
+  {
+    title: "Zarejestruj się",
+    url: "/page/signup",
+    iosIcon: personAddOutline,
+    mdIcon: personAddOutline,
   },
   {
     title: "Kontakt",

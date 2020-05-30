@@ -1,0 +1,43 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "username": "Janusz",
+      "password": "1337"
+    },
+    {
+      "login": "nowy",
+      "password": "janusz",
+      "id": 2
+    }
+  ],
+  "book": [
+    {
+      "author": "A.A. Milne",
+      "title": "Kubuś Puchatek",
+      "cover": "",
+      "publisher": "Nasza Księgarnia",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+      "year": "2018",
+      "stock": 3
+    },
+    {
+      "author": "A.A. Milne",
+      "title": "Kubuś Puchatek",
+      "cover": "",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+      "publisher": "Nasza Księgarnia",
+      "year": "2018",
+      "stock": 5
+    },
+    {
+      "author": "A.A. Milne",
+      "title": "Kubuś Puchatek",
+      "cover": "",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+      "publisher": "Nasza Księgarnia",
+      "year": "2018",
+      "stock": 0
+    }
+  ]
+}
