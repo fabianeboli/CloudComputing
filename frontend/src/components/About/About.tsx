@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import {
 	IonPage,
 	IonHeader,
@@ -10,7 +10,7 @@ import {
 } from "@ionic/react";
 import * as S from "./About.style";
 
-const About = () => {
+const About:FC = () => {
 	return (
 		<S.IonPage>
 			<IonHeader>

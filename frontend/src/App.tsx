@@ -1,5 +1,5 @@
 import Menu from "./components/Menu";
-import React from "react";
+import React, { useContext, FC } from "react";
 import { IonApp, IonRouterOutlet, IonSplitPane } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { Redirect, Route, Switch } from "react-router-dom";
@@ -28,9 +28,12 @@ import { theme } from "./Theme.style";
 import Books from "./components/Books/Books";
 import Login from "./components/SignIn/SignIn";
 import Register from "./components/SignUp/SignUp";
-import { SignedProvider } from "./contexts/SignedContext";
+import { SignedProvider} from "./contexts/SignedContext";
+import SignOut from "./components/SignOut/SignOut";
+import UserLibrary from "./components/UserLibrary/UserLibrary";
 
-const App: React.FC = () => {
+const App: FC = () => {
+
 	return (
 		<SignedProvider>
 			<IonApp>
@@ -44,7 +47,8 @@ const App: React.FC = () => {
 									<Route path="/page/books" component={Books} exact />
 									<Route path="/page/signin" component={Login} exact />
 									<Route path="/page/signup" component={Register} exact />
-									{/* <Route path="/page/signout" component={Login} exact /> */}
+									<Route path="/page/signout" component={SignOut} exact />
+									<Route path="/page/library" component={UserLibrary} exact/>
 									<Redirect from="/" to="/page/Inbox" exact />
 								</Switch>
 							</IonRouterOutlet>

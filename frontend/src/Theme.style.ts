@@ -1,9 +1,9 @@
 import { DefaultTheme, createGlobalStyle } from 'styled-components';
 
 export const theme: DefaultTheme = {
-    background: '#1f2229',
-    foreground: '#F2F7FF',
-    accent: '#00CC81'
+    background: '#fcfaee',
+    foreground: '#333',
+    accent: '#e63946'
     
 }
 

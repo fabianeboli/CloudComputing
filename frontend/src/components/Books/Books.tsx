@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import Book, { Book as IBook } from "./Book/Book";
 import { IonTitle } from "@ionic/react";
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 const Books: FC = () => {
 	const [books, setBooks] = useState<IBook[]>([]);
 
@@ -24,9 +24,11 @@ const Books: FC = () => {
 		return books.map((book) => (
 			<Book
 				key={uuid()}
+				id={book.id}
 				title={book.title}
 				author={book.author}
 				cover={book.cover}
+				category={book.category}
 				publisher={book.publisher}
 				year={book.year}
 				description={book.description}

@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import { IonButton } from "@ionic/react";
 
 type MouseEvent = React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>;
 
-const SignUp = () => {
-	const [login, setLogin] = useState<string>("");
+const SignUp:FC = () => {
+	const [username, setUsername] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 
 	const handleForm = async (event: MouseEvent) => {
 		event.preventDefault();
-		// TODO: Prawdziwe uwierzytelnienie po dodanym backendzie
-		const id: number = Math.floor(Math.random() * 100000);
+		// FIXME: Prawdziwe uwierzytelnienie po dodanym backendzie
 		const user = {
-			login,
+			username,
 			password,
+			books: []
 		};
 
 		const config = {
@@ -38,8 +38,8 @@ const SignUp = () => {
 					type="text"
 					name="name"
 					placeholder="Imię"
-					value={login}
-					onChange={({ target }) => setLogin(target.value)}
+					value={username}
+					onChange={({ target }) => setUsername(target.value.trim())}
 					required
 				/>
 				<input
@@ -48,7 +48,7 @@ const SignUp = () => {
 					placeholder="Hasło"
 					value={password}
 					min="3"
-					onChange={({ target }) => setPassword(target.value)}
+					onChange={({ target }) => setPassword(target.value.trim())}
 					required
 				/>
 				<button type="submit" onClick={(event) => handleForm(event)}>
