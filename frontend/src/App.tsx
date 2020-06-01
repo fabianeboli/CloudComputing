@@ -28,12 +28,12 @@ import { theme } from "./Theme.style";
 import Books from "./components/Books/Books";
 import Login from "./components/SignIn/SignIn";
 import Register from "./components/SignUp/SignUp";
-import { SignedProvider} from "./contexts/SignedContext";
+import { SignedProvider } from "./contexts/SignedContext";
 import SignOut from "./components/SignOut/SignOut";
 import UserLibrary from "./components/UserLibrary/UserLibrary";
+import Contact from "./components/Contact/Contact";
 
 const App: FC = () => {
-
 	return (
 		<SignedProvider>
 			<IonApp>
@@ -45,11 +45,12 @@ const App: FC = () => {
 								<Switch>
 									<Route path="/page/about" component={About} exact />
 									<Route path="/page/books" component={Books} exact />
+									<Route path="/page/contact" component={Contact} exact />
 									<Route path="/page/signin" component={Login} exact />
 									<Route path="/page/signup" component={Register} exact />
 									<Route path="/page/signout" component={SignOut} exact />
-									<Route path="/page/library" component={UserLibrary} exact/>
-									<Redirect from="/" to="/page/Inbox" exact />
+									<Route path="/page/library" component={UserLibrary} exact />
+									{/* <Redirect from="/" to="/page/Inbox" exact /> */}
 								</Switch>
 							</IonRouterOutlet>
 						</IonSplitPane>

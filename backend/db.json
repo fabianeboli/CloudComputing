@@ -70,7 +70,6 @@
           "stock": 5,
           "rentDate": "Jun 29, 2020"
         }
-       
       ],
       "id": 2
     },
@@ -79,6 +78,12 @@
       "password": "yesyy",
       "books": [],
       "id": 3
+    },
+    {
+      "username": "",
+      "password": "",
+      "books": [],
+      "id": 4
     }
   ],
   "book": [

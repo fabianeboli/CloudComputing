@@ -1,5 +1,6 @@
 import React, { createContext, Context, useState, FC } from "react";
 import { Book } from "../components/Books/Book/Book";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 interface Props {
 	children: React.ReactNode;
@@ -26,7 +27,7 @@ export const SignedContext: Context<Signed> = createContext<Signed>({
 });
 
 export const SignedProvider: FC<Props> = (props: Props) => {
-	const [signedIn, setSigned] = useState<IdUserName>({ id: "", username: "", books: [] });
+	const [signedIn, setSigned] = useLocalStorage("login",{ id: "", username: "", books: [] });
 	const changeSignedIn = (id: string, username: string, books: string[]) =>
 		setSigned({ id, username, books });
 	return (

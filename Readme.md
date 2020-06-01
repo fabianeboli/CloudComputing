@@ -7,3 +7,4 @@ Włączenie serwera `npx json-server --port 3001 --watch db.json`
 `npm install -g @ionic/cli`
 `cd frontend`
 `ionic serve`
+

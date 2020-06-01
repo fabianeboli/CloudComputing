@@ -1,11 +1,12 @@
 import React, { useState, FC } from "react";
-import { IonButton } from "@ionic/react";
+import { IonButton, IonCard, IonInput, IonButtons } from "@ionic/react";
+import Header from "../../utils/Header";
 
-type MouseEvent = React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>;
+type MouseEvent = React.MouseEvent<HTMLIonButtonElement, globalThis.MouseEvent>;
 
-const SignUp:FC = () => {
-	const [username, setUsername] = useState<string>("");
-	const [password, setPassword] = useState<string>("");
+const SignUp: FC = () => {
+	const [username, setUsername] = useState<string | null | undefined>("");
+	const [password, setPassword] = useState<string | null | undefined>("");
 
 	const handleForm = async (event: MouseEvent) => {
 		event.preventDefault();
@@ -13,7 +14,7 @@ const SignUp:FC = () => {
 		const user = {
 			username,
 			password,
-			books: []
+			books: [],
 		};
 
 		const config = {
@@ -32,33 +33,45 @@ const SignUp:FC = () => {
 	};
 
 	const form = (
-		<>
-			<form>
-				<input
+		<IonCard>
+			<form onSubmit={(e) => e.preventDefault()}>
+				<IonInput
 					type="text"
 					name="name"
-					placeholder="Imię"
+					placeholder="Imie"
 					value={username}
-					onChange={({ target }) => setUsername(target.value.trim())}
+					onIonChange={(event) => setUsername(event.detail.value)}
 					required
 				/>
-				<input
+				<IonInput
 					type="password"
 					name="password"
 					placeholder="Hasło"
 					value={password}
-					min="3"
-					onChange={({ target }) => setPassword(target.value.trim())}
+					onIonChange={(event) => setPassword(event.detail.value)}
 					required
 				/>
-				<button type="submit" onClick={(event) => handleForm(event)}>
-					Zarejestruj się
-				</button>
+				<IonButtons>
+					<IonButton
+						type="submit"
+						slot="primary"
+						expand={"full"}
+						onClick={(event: any) => handleForm(event)}
+					>
+						Zaloguj się
+					</IonButton>
+				</IonButtons>
 			</form>
-		</>
+		</IonCard>
 	);
 
-	return <div>{/* TODO: LOGO */}{form}</div>;
+	return (
+		<div>
+			<Header title="Rejestracja" />
+			{/* TODO: LOGO */}
+			{form}
+		</div>
+	);
 };
 
 export default SignUp;

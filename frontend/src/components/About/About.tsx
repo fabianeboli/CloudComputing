@@ -7,21 +7,17 @@ import {
 	IonToolbar,
 	IonButtons,
 	IonMenuButton,
+	IonContent,
+	IonCard,
 } from "@ionic/react";
 import * as S from "./About.style";
+import Header from "../../utils/Header";
 
-const About:FC = () => {
+const About: FC = () => {
 	return (
-		<S.IonPage>
-			<IonHeader>
-				<IonToolbar>
-					<IonButtons slot="start">
-						<IonMenuButton />
-					</IonButtons>
-					<IonTitle>Strona Główna</IonTitle>
-				</IonToolbar>
-			</IonHeader>
-			<S.container>
+		<>
+			<Header title="Strona Główna" />
+			<IonContent>
 				<S.h1>Biblioteka Libro</S.h1>
 				<S.h2>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ullamcorper
@@ -29,10 +25,9 @@ const About:FC = () => {
 					amet, vulputate dui. In quis consectetur felis. Curabitur et leo dignissim,
 					ornare enim id, ultricies erat. Nulla rhoncus nisl in fringilla elementum.
 				</S.h2>
-
 				<IonButton> Zarezerwuj </IonButton>
-			</S.container>
-		</S.IonPage>
+			</IonContent>
+		</>
 	);
 };
 

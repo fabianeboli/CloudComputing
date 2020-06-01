@@ -1,9 +1,10 @@
 import React, { useState, useContext, FC } from "react";
-import { IonButton } from "@ionic/react";
+import { IonButton, IonInput, IonButtons, IonCard, IonContent } from "@ionic/react";
 import { SignedContext, Signed } from "../../contexts/SignedContext";
 import * as S from "./SignIn.style";
+import Header from "../../utils/Header";
 
-type MouseEvent = React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>;
+type MouseEvent = React.MouseEvent<HTMLIonButtonElement, globalThis.MouseEvent>;
 
 type User = {
 	username: string;
@@ -11,8 +12,8 @@ type User = {
 };
 
 const SignIn: FC = () => {
-	const [username, setUsername] = useState<string>("");
-	const [password, setPassword] = useState<string>("");
+	const [username, setUsername] = useState<string | null | undefined>("");
+	const [password, setPassword] = useState<string | null | undefined>("");
 	const { signedIn, changeSignedIn }: Signed = useContext(SignedContext);
 	const [error, setError] = useState<string>("");
 
@@ -38,26 +39,33 @@ const SignIn: FC = () => {
 
 	const SignInForm: JSX.Element = (
 		<>
-			<form>
-				<input
+			<form onSubmit={(e) => e.preventDefault()}>
+				<IonInput
 					type="text"
 					name="name"
 					placeholder="Imie"
 					value={username}
-					onChange={({ target }) => setUsername(target.value.trim())}
+					onIonChange={(event) => setUsername(event.detail.value)}
 					required
 				/>
-				<input
+				<IonInput
 					type="password"
 					name="password"
 					placeholder="Hasło"
 					value={password}
-					onChange={({ target }) => setPassword(target.value.trim())}
+					onIonChange={(event) => setPassword(event.detail.value)}
 					required
 				/>
-				<button type="submit" onClick={(event) => handleForm(event)}>
-					Zaloguj się
-				</button>
+				<IonButtons>
+					<IonButton
+						type="submit"
+						slot="primary"
+						expand={"full"}
+						onClick={(event: any) => handleForm(event)}
+					>
+						Zaloguj się
+					</IonButton>
+				</IonButtons>
 			</form>
 		</>
 	);
@@ -69,10 +77,13 @@ const SignIn: FC = () => {
 	);
 
 	return (
-		<S.container>
-			{signedIn.username ? SignedInGreeting : SignInForm}
-			{error && <h1>Błąd: {error}</h1>}
-		</S.container>
+		<IonContent>
+			<Header title="Zaloguj się" />
+			<IonCard>
+				{signedIn.username ? SignedInGreeting : SignInForm}
+				{error && <h1>Błąd: {error}</h1>}
+			</IonCard>
+		</IonContent>
 	);
 };
 

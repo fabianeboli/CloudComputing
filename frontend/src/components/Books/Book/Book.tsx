@@ -32,7 +32,7 @@ const Book: FC<Book> = (props: Book) => {
 	const handleClick = async (event: MouseEvent) => {
 		event.preventDefault();
 
-		const rentedBooks = signedIn.books;
+	
 		const newBook = {
 			...props,
 			rentDate: moment().add(30, "days").format("ll"),

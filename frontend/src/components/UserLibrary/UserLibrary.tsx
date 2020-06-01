@@ -1,10 +1,16 @@
 import React, { useContext, FC } from "react";
 import { SignedContext } from "../../contexts/SignedContext";
-import { IonHeader, IonCardTitle, IonCard, IonCardSubtitle, IonImg } from "@ionic/react";
+import {
+	IonHeader,
+	IonCardTitle,
+	IonCard,
+	IonCardSubtitle,
+	IonImg,
+	IonContent,
+} from "@ionic/react";
 import { Book } from "../Books/Book/Book";
-
-
-
+import Header from "../../utils/Header";
+import { v4 as uuid } from "uuid";
 
 const UserLibrary: FC = () => {
 	const { signedIn } = useContext(SignedContext);
@@ -12,7 +18,7 @@ const UserLibrary: FC = () => {
 	const presentBooks = (books: Book[] & any) =>
 		books.map((book: any) => (
 			<>
-				<IonCard>
+				<IonCard key={uuid()}>
 					<IonCardTitle>{book.title}</IonCardTitle>
 					<IonImg> {book.cover} </IonImg>
 					<IonCardSubtitle>
@@ -24,10 +30,10 @@ const UserLibrary: FC = () => {
 		));
 
 	return (
-		<div>
-			<IonHeader>Twoje zamówione książki</IonHeader>
+		<IonContent>
+			<Header title="Twoje zamówione ksiązki" />
 			{presentBooks(signedIn.books)}
-		</div>
+		</IonContent>
 	);
 };
 

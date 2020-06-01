@@ -1,7 +1,8 @@
 import React, { FC, useState, useEffect } from "react";
 import Book, { Book as IBook } from "./Book/Book";
-import { IonTitle } from "@ionic/react";
+import { IonTitle, IonContent } from "@ionic/react";
 import { v4 as uuid } from "uuid";
+import Header from "../../utils/Header";
 const Books: FC = () => {
 	const [books, setBooks] = useState<IBook[]>([]);
 
@@ -38,10 +39,10 @@ const Books: FC = () => {
 	};
 
 	return (
-		<div>
-			<IonTitle color="white">Książki</IonTitle>
+		<IonContent>
+			<Header title="Książki" />
 			{presentBooks(books)}
-		</div>
+		</IonContent>
 	);
 };
 
