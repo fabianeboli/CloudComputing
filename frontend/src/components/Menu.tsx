@@ -109,14 +109,14 @@ const Menu: React.FC = () => {
 	const appPages = signedIn.username ? forSignedInPages : forSignedOutPages;
 
 	return (
-		<IonMenu contentId="main" type="overlay">
+		<IonMenu swipeGesture contentId="main" type="reveal">
 			<IonContent>
 				<IonList id="inbox-list">
 					<IonListHeader>LIBRO</IonListHeader>
 					<IonNote>{signedIn.username}</IonNote>
 					{appPages.map((appPage) => {
 						return (
-							<IonMenuToggle key={uuid()} autoHide={false}>
+							<IonMenuToggle key={uuid()} autoHide={false} >
 								<IonItem
 									className={location.pathname === appPage.url ? "selected" : ""}
 									routerLink={appPage.url}

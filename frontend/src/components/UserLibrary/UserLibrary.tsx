@@ -1,10 +1,7 @@
 import React, { useContext, FC } from "react";
 import { SignedContext } from "../../contexts/SignedContext";
 import {
-	IonCardTitle,
-	IonCard,
 	IonCardSubtitle,
-	IonImg,
 	IonContent,
 	IonGrid,
 	IonRow,

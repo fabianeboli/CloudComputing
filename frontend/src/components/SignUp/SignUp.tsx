@@ -1,5 +1,5 @@
 import React, { useState, FC } from "react";
-import { IonButton, IonCard, IonInput, IonButtons, IonContent } from "@ionic/react";
+import { IonButton, IonCard, IonInput, IonButtons, IonContent, IonGrid, IonRow, IonCol } from "@ionic/react";
 import Header from "../../utils/Header";
 import { url } from "../../utils/url";
 
@@ -86,9 +86,15 @@ const SignUp: FC = () => {
 	return (
 		<IonContent>
 			<Header title="Rejestracja" />
+			<IonGrid>
+				<IonRow className="ion-align-items-center">
+					<IonCol sizeSm="12" sizeMd="6" className="ion-justify-content-center">
+						{form}
+						<h2> {error} </h2>
+					</IonCol>
+				</IonRow>
+			</IonGrid>
 			{/* TODO: LOGO */}
-			{form}
-			<h2> {error} </h2>
 		</IonContent>
 	);
 };

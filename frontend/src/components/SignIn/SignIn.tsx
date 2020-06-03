@@ -1,5 +1,5 @@
 import React, { useState, useContext, FC } from "react";
-import { IonButton, IonInput, IonButtons, IonCard, IonContent } from "@ionic/react";
+import { IonButton, IonInput, IonButtons, IonCard, IonContent, IonRow, IonCol } from "@ionic/react";
 import { SignedContext, Signed } from "../../contexts/SignedContext";
 import * as S from "./SignIn.style";
 import Header from "../../utils/Header";
@@ -82,8 +82,12 @@ const SignIn: FC = () => {
 	return (
 		<IonContent>
 			<Header title="Zaloguj się" />
-			<IonCard>{signedIn.username ? SignedInGreeting : SignInForm}</IonCard>
-			<h1> {error}</h1>
+			<IonRow className="ion-align-items-center">
+				<IonCol sizeSm="12" sizeMd="6" className="ion-justify-content-center">
+					<IonCard>{signedIn.username ? SignedInGreeting : SignInForm}</IonCard>
+					<h1> {error}</h1>
+				</IonCol>
+			</IonRow>
 		</IonContent>
 	);
 };
