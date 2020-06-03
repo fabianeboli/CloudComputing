@@ -57,6 +57,30 @@
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
           "stock": 6,
           "rentDate": "Jul 3, 2020"
+        },
+        {
+          "id": 1,
+          "title": "Kubuś Puchatek",
+          "author": "A.A. Milne",
+          "cover": "https://staticl.poczytaj.pl/374000/kubus-puchatek-milne-alan-alexander-milne,374838-l.jpg",
+          "category": "Literatura dziecięca",
+          "publisher": "Nasza Księgarnia",
+          "year": "2018",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+          "stock": 5,
+          "rentDate": "Jul 3, 2020"
+        },
+        {
+          "id": 1,
+          "title": "Kubuś Puchatek",
+          "author": "A.A. Milne",
+          "cover": "https://staticl.poczytaj.pl/374000/kubus-puchatek-milne-alan-alexander-milne,374838-l.jpg",
+          "category": "Literatura dziecięca",
+          "publisher": "Nasza Księgarnia",
+          "year": "2018",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+          "stock": 4,
+          "rentDate": "Jul 3, 2020"
         }
       ],
       "id": 2
@@ -72,7 +96,7 @@
       "publisher": "Nasza Księgarnia",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
       "year": "2018",
-      "stock": 5
+      "stock": 3
     },
     {
       "id": 2,

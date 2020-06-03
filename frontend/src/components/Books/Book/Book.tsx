@@ -9,9 +9,14 @@ import {
 	IonCardContent,
 	IonImg,
 	IonThumbnail,
+	IonRow,
+	IonCol,
+	IonCardHeader,
+	IonTitle,
 } from "@ionic/react";
 import { SignedContext, Signed } from "../../../contexts/SignedContext";
 import { url } from "../../../utils/url";
+import { StyledIonThumbnail, StyledIonImage, StyledIonTitle, StyledIonCard, StyledIonCardContent, StyledIonButton } from "./Book.style";
 
 export interface Book {
 	id: string;
@@ -73,35 +78,36 @@ const Book: FC<Book> = (props: Book) => {
 		<>
 			<IonCardSubtitle>Ilość w magazynie: {stock}</IonCardSubtitle>
 			{signedIn.username ? (
-				<IonButton onClick={(event) => handleClick(event)}>Wypożycz</IonButton>
+				<StyledIonButton expand='block' onClick={(event) => handleClick(event)}>Wypożycz</StyledIonButton>
 			) : (
-				<IonButton disabled> Zaloguj się, aby wypożyczyć</IonButton>
+				<StyledIonButton expand='block' disabled> Zaloguj się, aby wypożyczyć</StyledIonButton>
 			)}
 		</>
 	);
 
 	const OutOfStock: JSX.Element = (
 		<>
-			<IonCardSubtitle color="danger">Brak dostępu!</IonCardSubtitle>
-			<IonButton disabled>Wypożycz</IonButton>
+			<IonCardSubtitle  color="danger">Brak dostępu!</IonCardSubtitle>
+			<StyledIonButton expand='block' disabled>Wypożycz</StyledIonButton>
 		</>
 	);
 
 	return (
-		<IonCard>
-			<IonIcon src={props.cover} />
-			<IonCardSubtitle>{props.author}</IonCardSubtitle>
-			<IonCardSubtitle>{props.category}</IonCardSubtitle>
-			<IonThumbnail>
-				<IonImg src={props.cover} />
-			</IonThumbnail>
-			<IonCardTitle>{props.title}</IonCardTitle>
-			<IonCardSubtitle color="light">
-				{props.publisher} {props.year}{" "}
-			</IonCardSubtitle>
-			<IonCardContent>{props.description}</IonCardContent>
-			{stock ? InStock : OutOfStock}
-		</IonCard>
+		<IonCol  sizeSm='12' sizeMd='6' className="ion-justify-content-center">
+			<StyledIonCard>
+				<StyledIonTitle>{props.title}</StyledIonTitle>
+				
+					<StyledIonImage src={props.cover} />
+				
+				<IonCardSubtitle >{props.author}</IonCardSubtitle>
+				<IonCardSubtitle>{props.category}</IonCardSubtitle>
+				<IonCardSubtitle >
+					{props.publisher} {props.year}{" "}
+				</IonCardSubtitle>
+				<StyledIonCardContent>{props.description}</StyledIonCardContent>
+				{stock ? InStock : OutOfStock}
+			</StyledIonCard>
+		</IonCol>
 	);
 };
 

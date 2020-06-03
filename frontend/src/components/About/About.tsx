@@ -1,15 +1,5 @@
 import React, { FC } from "react";
-import {
-	IonPage,
-	IonHeader,
-	IonTitle,
-	IonButton,
-	IonToolbar,
-	IonButtons,
-	IonMenuButton,
-	IonContent,
-	IonCard,
-} from "@ionic/react";
+import { IonContent } from "@ionic/react";
 import * as S from "./About.style";
 import Header from "../../utils/Header";
 
@@ -25,7 +15,6 @@ const About: FC = () => {
 					amet, vulputate dui. In quis consectetur felis. Curabitur et leo dignissim,
 					ornare enim id, ultricies erat. Nulla rhoncus nisl in fringilla elementum.
 				</S.h2>
-				<IonButton> Zarezerwuj </IonButton>
 			</IonContent>
 		</>
 	);

@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import Book, { Book as IBook } from "./Book/Book";
-import {  IonContent } from "@ionic/react";
+import { IonContent, IonGrid, IonRow } from "@ionic/react";
 import { v4 as uuid } from "uuid";
 import Header from "../../utils/Header";
 import { url } from "../../utils/url";
@@ -43,7 +43,12 @@ const Books: FC = () => {
 	return (
 		<IonContent>
 			<Header title="Książki" />
-			{presentBooks(books)}
+			<IonGrid fixed>
+			<IonRow className='ion-align-items-center'>
+				{presentBooks(books)}
+			</IonRow>
+			</IonGrid>
+			
 		</IonContent>
 	);
 };
