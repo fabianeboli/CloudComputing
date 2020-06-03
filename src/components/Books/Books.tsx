@@ -1,13 +1,15 @@
 import React, { FC, useState, useEffect } from "react";
 import Book, { Book as IBook } from "./Book/Book";
-import { IonTitle, IonContent } from "@ionic/react";
+import {  IonContent } from "@ionic/react";
 import { v4 as uuid } from "uuid";
 import Header from "../../utils/Header";
+import { url } from "../../utils/url";
+
 const Books: FC = () => {
 	const [books, setBooks] = useState<IBook[]>([]);
 
 	const getBooks = async () => {
-		const response = await fetch("http://localhost:3001/book");
+		const response = await fetch(`${url}/book`);
 
 		if (response.ok) {
 			const fetchedData = await response.json();

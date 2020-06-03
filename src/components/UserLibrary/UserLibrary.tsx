@@ -1,7 +1,6 @@
 import React, { useContext, FC } from "react";
 import { SignedContext } from "../../contexts/SignedContext";
 import {
-	IonHeader,
 	IonCardTitle,
 	IonCard,
 	IonCardSubtitle,

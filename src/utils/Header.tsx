@@ -5,7 +5,6 @@ import {
 	IonButtons,
 	IonMenuButton,
 	IonTitle,
-	IonItem,
 	IonToggle,
 } from "@ionic/react";
 
@@ -16,10 +15,8 @@ interface Props {
 const Header = (props: Props) => {
 	const [toggle, setToggle] = useState<boolean>(true);
 
-	const toggleTheme = (event: any) => {
+	const toggleTheme = () => {
 		setToggle(!toggle);
-		// const ifPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-		// ifPrefersDark.addListener((e) => checkToggle(e.matches));
 
 		if (toggle) {
 			document.body.classList.add("light");

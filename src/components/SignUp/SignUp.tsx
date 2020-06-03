@@ -1,16 +1,33 @@
 import React, { useState, FC } from "react";
-import { IonButton, IonCard, IonInput, IonButtons } from "@ionic/react";
+import { IonButton, IonCard, IonInput, IonButtons, IonContent } from "@ionic/react";
 import Header from "../../utils/Header";
+import { url } from "../../utils/url";
 
 type MouseEvent = React.MouseEvent<HTMLIonButtonElement, globalThis.MouseEvent>;
 
 const SignUp: FC = () => {
 	const [username, setUsername] = useState<string | null | undefined>("");
 	const [password, setPassword] = useState<string | null | undefined>("");
+	const [error, setError] = useState<string>("");
 
-	const handleForm = async (event: MouseEvent) => {
+	const checkIfExist = async (username: string | null | undefined): Promise<boolean> => {
+		const response = await fetch(`${url}/user`);
+
+		if (response.ok) {
+			const data = await response.json();
+			const checkUsername = data.find((user: any) => user.username === username);
+			!checkUsername && setError("Ten użytkownik już istnieje");
+			return checkUsername ? true : false;
+		}
+		return false;
+	};
+
+	const handleForm = async (event: MouseEvent): Promise<void> => {
 		event.preventDefault();
-		// FIXME: Prawdziwe uwierzytelnienie po dodanym backendzie
+		setError("");
+
+		if (checkIfExist(username)) return;
+
 		const user = {
 			username,
 			password,
@@ -23,12 +40,13 @@ const SignUp: FC = () => {
 			body: JSON.stringify(user),
 		};
 
-		const response: Response = await fetch("http://localhost:3001/user", config);
+		const response: Response = await fetch(`${url}/user`, config);
 
 		if (response.ok) {
 			console.log("SIGNED UP NEW USER");
 		} else {
 			console.error(`ERROR: ${response.status}`);
+			setError(`ERROR: ${response.statusText}`);
 		}
 	};
 
@@ -58,7 +76,7 @@ const SignUp: FC = () => {
 						expand={"full"}
 						onClick={(event: any) => handleForm(event)}
 					>
-						Zaloguj się
+						Zarejestruj się
 					</IonButton>
 				</IonButtons>
 			</form>
@@ -66,11 +84,12 @@ const SignUp: FC = () => {
 	);
 
 	return (
-		<div>
+		<IonContent>
 			<Header title="Rejestracja" />
 			{/* TODO: LOGO */}
 			{form}
-		</div>
+			<h2> {error} </h2>
+		</IonContent>
 	);
 };
 

@@ -11,6 +11,7 @@ import {
 	IonCardContent,
 } from "@ionic/react";
 import { SignedContext, Signed } from "../../../contexts/SignedContext";
+import { url } from "../../../utils/url";
 
 export interface Book {
 	id: string;
@@ -32,12 +33,11 @@ const Book: FC<Book> = (props: Book) => {
 	const handleClick = async (event: MouseEvent) => {
 		event.preventDefault();
 
-	
 		const newBook = {
 			...props,
 			rentDate: moment().add(30, "days").format("ll"),
 		};
-		const getUserData: Response = await fetch(`http://localhost:3001/user/${signedIn.id}`);
+		const getUserData: Response = await fetch(`${url}/user/${signedIn.id}`);
 		const userData = await getUserData.json();
 
 		const config = {
@@ -45,14 +45,14 @@ const Book: FC<Book> = (props: Book) => {
 			headers: { "Content-Type": "application/json;charset=utf-8" },
 			body: JSON.stringify({ books: [...userData.books, newBook] }),
 		};
-		// FIXME: zmienić po dodaniu backendu
+		// FIXME: Błąd usuwanie książek
 		const orderBook: Response = await fetch(
-			`http://localhost:3001/user/${signedIn.id}`,
+			`${url}/user/${signedIn.id}`,
 			config,
 		);
 
 		if (orderBook.ok) {
-			setStock((stock: number) => stock - 1);
+			await setStock((stock: number) => stock - 1);
 
 			const bookConfig = {
 				method: "PATCH",
@@ -62,7 +62,7 @@ const Book: FC<Book> = (props: Book) => {
 
 			// FIXME: zmienić po dodaniu backendu
 			const updateStock: Response = await fetch(
-				`http://localhost:3001/book/${props.id}`,
+				`${url}/book/${props.id}`,
 				bookConfig,
 			);
 			if (updateStock.ok) {

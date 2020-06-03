@@ -3,6 +3,7 @@ import { IonButton, IonInput, IonButtons, IonCard, IonContent } from "@ionic/rea
 import { SignedContext, Signed } from "../../contexts/SignedContext";
 import * as S from "./SignIn.style";
 import Header from "../../utils/Header";
+import { url } from "../../utils/url";
 
 type MouseEvent = React.MouseEvent<HTMLIonButtonElement, globalThis.MouseEvent>;
 
@@ -19,21 +20,23 @@ const SignIn: FC = () => {
 
 	const handleForm = async (event: MouseEvent): Promise<void> => {
 		event.preventDefault();
+		setError("");
 
-		const response: Response = await fetch("http://localhost:3001/user");
+		const response: Response = await fetch(`${url}/user`);
 
 		if (response.ok) {
-			// FIXME: Zmienić bo dodaniu backendu
 			const users = await response.json();
 			const foundUser = users.find(
 				(user: User) => user.username === username && user.password === password,
 			);
-			console.log("I AM HERE", foundUser);
-			if (foundUser) changeSignedIn(foundUser.id, foundUser.username, foundUser.books);
-			foundUser && console.log("LOGGED IN ", signedIn.username);
+			if (foundUser) {
+				changeSignedIn(foundUser.id, foundUser.username, foundUser.books);
+			} else {
+				setError(`Użytkownik nie istnieje`);
+			}
 		} else {
 			console.error(`ERROR: ${response.status}`);
-			setError(error);
+			setError(`ERROR: ${response.statusText}`);
 		}
 	};
 
@@ -79,10 +82,8 @@ const SignIn: FC = () => {
 	return (
 		<IonContent>
 			<Header title="Zaloguj się" />
-			<IonCard>
-				{signedIn.username ? SignedInGreeting : SignInForm}
-				{error && <h1>Błąd: {error}</h1>}
-			</IonCard>
+			<IonCard>{signedIn.username ? SignedInGreeting : SignInForm}</IonCard>
+			<h1> {error}</h1>
 		</IonContent>
 	);
 };
