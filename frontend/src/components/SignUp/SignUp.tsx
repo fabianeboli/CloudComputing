@@ -1,5 +1,14 @@
 import React, { useState, FC } from "react";
-import { IonButton, IonCard, IonInput, IonButtons, IonContent, IonGrid, IonRow, IonCol } from "@ionic/react";
+import {
+	IonButton,
+	IonCard,
+	IonInput,
+	IonButtons,
+	IonContent,
+	IonGrid,
+	IonRow,
+	IonCol,
+} from "@ionic/react";
 import Header from "../../utils/Header";
 import { url } from "../../utils/url";
 
@@ -47,6 +56,8 @@ const SignUp: FC = () => {
 		} else {
 			console.error(`ERROR: ${response.status}`);
 			setError(`ERROR: ${response.statusText}`);
+			setUsername("");
+			setPassword("");
 		}
 	};
 

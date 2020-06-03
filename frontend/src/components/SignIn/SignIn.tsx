@@ -1,7 +1,6 @@
 import React, { useState, useContext, FC } from "react";
 import { IonButton, IonInput, IonButtons, IonCard, IonContent, IonRow, IonCol } from "@ionic/react";
 import { SignedContext, Signed } from "../../contexts/SignedContext";
-import * as S from "./SignIn.style";
 import Header from "../../utils/Header";
 import { url } from "../../utils/url";
 
@@ -37,6 +36,8 @@ const SignIn: FC = () => {
 		} else {
 			console.error(`ERROR: ${response.status}`);
 			setError(`ERROR: ${response.statusText}`);
+			setUsername("");
+			setPassword("");
 		}
 	};
 

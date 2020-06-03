@@ -2,17 +2,7 @@ import React, { FC, useContext, useState } from "react";
 import moment from "moment";
 import {
 	IonCardSubtitle,
-	IonCardTitle,
-	IonCard,
-	IonIcon,
-	IonButton,
-	IonCardContent,
-	IonImg,
-	IonThumbnail,
-	IonRow,
-	IonCol,
-	IonCardHeader,
-	IonTitle,
+	IonCol
 } from "@ionic/react";
 import { SignedContext, Signed } from "../../../contexts/SignedContext";
 import { url } from "../../../utils/url";
@@ -23,6 +13,7 @@ import {
 	StyledIonCardContent,
 	StyledIonButton,
 } from "./Book.style";
+import 'moment/locale/pl';
 
 export interface IBook {
 	id: string;
@@ -46,7 +37,7 @@ export const Book: FC<IBook> = (props: IBook) => {
 
 		const newBook = {
 			...props,
-			rentDate: moment().add(30, "days").format("ll"),
+			rentDate: moment().add(30, "days").format("LL"),
 		};
 		const getUserData: Response = await fetch(`${url}/user/${signedIn.id}`);
 		const userData = await getUserData.json();

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
 	IonHeader,
 	IonToolbar,
@@ -7,13 +7,14 @@ import {
 	IonTitle,
 	IonToggle,
 } from "@ionic/react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 interface Props {
 	title: string;
 }
 
 const Header = (props: Props) => {
-	const [toggle, setToggle] = useState<boolean>(true);
+	const [toggle, setToggle] = useLocalStorage("dark", true);
 
 	const toggleTheme = () => {
 		setToggle(!toggle);
@@ -35,7 +36,7 @@ const Header = (props: Props) => {
 						<IonMenuButton />
 					</IonButtons>
 					<IonTitle>{props.title}</IonTitle>
-					<IonToggle onClick={toggleTheme} slot="end"></IonToggle>
+					<IonToggle onClick={toggleTheme} slot="end" checked={toggle}></IonToggle>
 				</IonToolbar>
 			</IonHeader>
 		</>

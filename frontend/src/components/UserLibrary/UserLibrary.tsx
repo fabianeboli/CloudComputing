@@ -7,7 +7,7 @@ import {
 	IonRow,
 	IonCol,
 } from "@ionic/react";
-import { IBook, Book } from "../Books/Book/Book";
+import { IBook } from "../Books/Book/Book";
 import Header from "../../utils/Header";
 import { v4 as uuid } from "uuid";
 import {
