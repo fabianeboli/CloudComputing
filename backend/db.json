@@ -1,64 +1,100 @@
 {
-	"user": [
-		{
-			"id": 1,
-			"username": "Janusz",
-			"password": "1337",
-			"books": []
-		},
-		{
-			"username": "nowy",
-			"password": "janusz",
-			"books": [
-				{
-					"id": 1,
-					"title": "Kubuś Puchatek",
-					"author": "A.A. Milne",
-					"cover": "",
-					"category": "Literatura dziecięca",
-					"publisher": "Nasza Księgarnia",
-					"year": "2018",
-					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
-					"stock": 2,
-					"rentDate": "Jun 29, 2020"
-				}
-			],
-			"id": 2
-		}
-	],
-	"book": [
-		{
-			"id": 1,
-			"author": "A.A. Milne",
-			"title": "Kubuś Puchatek",
-			"cover": "",
-			"category": "Literatura dziecięca",
-			"publisher": "Nasza Księgarnia",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
-			"year": "2018",
-			"stock": 5
-		},
-		{
-			"id": 2,
-			"author": "Tzu sun",
-			"title": "Sztuka Wojny",
-			"cover": "",
-			"category": "Literatura militarystyczna",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
-			"publisher": "Wydawnictwo Helion",
-			"year": "2013",
-			"stock": 3
-		},
-		{
-			"id": 3,
-			"author": "Stanisław Wrycza",
-			"title": "Informatyka Ekonomiczna",
-			"cover": "",
-			"category": "Podręcznik akademicki",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
-			"publisher": "PWE",
-			"year": "2019",
-			"stock": 0
-		}
-	]
+  "user": [
+    {
+      "id": 1,
+      "username": "Janusz",
+      "password": "1337",
+      "books": []
+    },
+    {
+      "username": "nowy",
+      "password": "janusz",
+      "books": [
+        {
+          "id": 1,
+          "title": "Kubuś Puchatek",
+          "author": "A.A. Milne",
+          "cover": "",
+          "category": "Literatura dziecięca",
+          "publisher": "Nasza Księgarnia",
+          "year": "2018",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+          "stock": 2,
+          "rentDate": "Jun 29, 2020"
+        },
+        {
+          "id": 2,
+          "title": "Sztuka Wojny",
+          "author": "Tzu sun",
+          "cover": "",
+          "category": "Literatura militarystyczna",
+          "publisher": "Wydawnictwo Helion",
+          "year": "2013",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+          "stock": 6,
+          "rentDate": "Jul 3, 2020"
+        },
+        {
+          "id": 2,
+          "title": "Sztuka Wojny",
+          "author": "Tzu sun",
+          "cover": "",
+          "category": "Literatura militarystyczna",
+          "publisher": "Wydawnictwo Helion",
+          "year": "2013",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+          "stock": 6,
+          "rentDate": "Jul 3, 2020"
+        },
+        {
+          "id": 2,
+          "title": "Sztuka Wojny",
+          "author": "Tzu sun",
+          "cover": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fecsmedia.pl%2Fc%2F14700462934825969-jpg-gallery.big-iext40623391.jpg&f=1&nofb=1",
+          "category": "Literatura militarystyczna",
+          "publisher": "Wydawnictwo Helion",
+          "year": "2013",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+          "stock": 6,
+          "rentDate": "Jul 3, 2020"
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "book": [
+    {
+      "id": 1,
+      "author": "A.A. Milne",
+      "title": "Kubuś Puchatek",
+      "cover": "https://staticl.poczytaj.pl/374000/kubus-puchatek-milne-alan-alexander-milne,374838-l.jpg",
+      "category": "Literatura dziecięca",
+      "publisher": "Nasza Księgarnia",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+      "year": "2018",
+      "stock": 5
+    },
+    {
+      "id": 2,
+      "author": "Tzu sun",
+      "title": "Sztuka Wojny",
+      "cover": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fecsmedia.pl%2Fc%2F14700462934825969-jpg-gallery.big-iext40623391.jpg&f=1&nofb=1",
+      "category": "Literatura militarystyczna",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+      "publisher": "Wydawnictwo Helion",
+      "year": "2013",
+      "stock": 3
+    },
+    {
+      "id": 3,
+      "author": "Stanisław Wrycza",
+      "title": "Informatyka Ekonomiczna",
+      "cover": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic01.helion.com.pl%2Fglobal%2Fokladki%2F326x466%2F5fa8d565157d4040814abe75eec51390%2Ca_01vr.jpg&f=1&nofb=1",
+      "category": "Podręcznik akademicki",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+      "publisher": "PWE",
+      "year": "2019",
+      "stock": 1
+    }
+  ]
 }

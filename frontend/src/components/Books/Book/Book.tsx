@@ -1,14 +1,14 @@
 import React, { FC, useContext, useState } from "react";
-import * as S from "./Book.style";
 import moment from "moment";
 import {
 	IonCardSubtitle,
 	IonCardTitle,
 	IonCard,
 	IonIcon,
-	IonContent,
 	IonButton,
 	IonCardContent,
+	IonImg,
+	IonThumbnail,
 } from "@ionic/react";
 import { SignedContext, Signed } from "../../../contexts/SignedContext";
 import { url } from "../../../utils/url";
@@ -29,7 +29,7 @@ type MouseEvent = React.MouseEvent<HTMLIonButtonElement, globalThis.MouseEvent>;
 
 const Book: FC<Book> = (props: Book) => {
 	const [stock, setStock] = useState<number>(props.stock);
-	const { signedIn }: Signed = useContext(SignedContext);
+	const { signedIn, changeSignedIn }: Signed = useContext(SignedContext);
 	const handleClick = async (event: MouseEvent) => {
 		event.preventDefault();
 
@@ -45,26 +45,20 @@ const Book: FC<Book> = (props: Book) => {
 			headers: { "Content-Type": "application/json;charset=utf-8" },
 			body: JSON.stringify({ books: [...userData.books, newBook] }),
 		};
-		// FIXME: Błąd usuwanie książek
-		const orderBook: Response = await fetch(
-			`${url}/user/${signedIn.id}`,
-			config,
-		);
+		// Find user by id Append ordered books
+		const orderBook: Response = await fetch(`${url}/user/${signedIn.id}`, config);
 
 		if (orderBook.ok) {
-			await setStock((stock: number) => stock - 1);
+			setStock(stock - 1);
+			changeSignedIn(signedIn.id, signedIn.username, [...signedIn.books, newBook]);
 
 			const bookConfig = {
 				method: "PATCH",
 				headers: { "Content-Type": "application/json;charset=utf-8" },
-				body: JSON.stringify({ stock }),
+				body: JSON.stringify({ stock: stock - 1 }),
 			};
-
-			// FIXME: zmienić po dodaniu backendu
-			const updateStock: Response = await fetch(
-				`${url}/book/${props.id}`,
-				bookConfig,
-			);
+			// decrease stock in the library
+			const updateStock: Response = await fetch(`${url}/book/${props.id}`, bookConfig);
 			if (updateStock.ok) {
 				console.log("UPDATED STOCK");
 			} else {
@@ -98,6 +92,9 @@ const Book: FC<Book> = (props: Book) => {
 			<IonIcon src={props.cover} />
 			<IonCardSubtitle>{props.author}</IonCardSubtitle>
 			<IonCardSubtitle>{props.category}</IonCardSubtitle>
+			<IonThumbnail>
+				<IonImg src={props.cover} />
+			</IonThumbnail>
 			<IonCardTitle>{props.title}</IonCardTitle>
 			<IonCardSubtitle color="light">
 				{props.publisher} {props.year}{" "}

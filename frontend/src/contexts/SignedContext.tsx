@@ -30,6 +30,7 @@ export const SignedProvider: FC<Props> = (props: Props) => {
 	const [signedIn, setSigned] = useLocalStorage("login",{ id: "", username: "", books: [] });
 	const changeSignedIn = (id: string, username: string, books: string[]) =>
 		setSigned({ id, username, books });
+	
 	return (
 		<SignedContext.Provider value={{ signedIn, changeSignedIn }}>
 			{props.children}

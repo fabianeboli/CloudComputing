@@ -1,12 +1,6 @@
 import React, { useContext, FC } from "react";
 import { SignedContext } from "../../contexts/SignedContext";
-import {
-	IonCardTitle,
-	IonCard,
-	IonCardSubtitle,
-	IonImg,
-	IonContent,
-} from "@ionic/react";
+import { IonCardTitle, IonCard, IonCardSubtitle, IonImg, IonContent } from "@ionic/react";
 import { Book } from "../Books/Book/Book";
 import Header from "../../utils/Header";
 import { v4 as uuid } from "uuid";
