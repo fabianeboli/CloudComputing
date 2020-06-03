@@ -16,9 +16,15 @@ import {
 } from "@ionic/react";
 import { SignedContext, Signed } from "../../../contexts/SignedContext";
 import { url } from "../../../utils/url";
-import { StyledIonThumbnail, StyledIonImage, StyledIonTitle, StyledIonCard, StyledIonCardContent, StyledIonButton } from "./Book.style";
+import {
+	StyledIonImage,
+	StyledIonCardTitle,
+	StyledIonCard,
+	StyledIonCardContent,
+	StyledIonButton,
+} from "./Book.style";
 
-export interface Book {
+export interface IBook {
 	id: string;
 	title: string;
 	author: string;
@@ -32,7 +38,7 @@ export interface Book {
 
 type MouseEvent = React.MouseEvent<HTMLIonButtonElement, globalThis.MouseEvent>;
 
-const Book: FC<Book> = (props: Book) => {
+export const Book: FC<IBook> = (props: IBook) => {
 	const [stock, setStock] = useState<number>(props.stock);
 	const { signedIn, changeSignedIn }: Signed = useContext(SignedContext);
 	const handleClick = async (event: MouseEvent) => {
@@ -78,30 +84,37 @@ const Book: FC<Book> = (props: Book) => {
 		<>
 			<IonCardSubtitle>Ilość w magazynie: {stock}</IonCardSubtitle>
 			{signedIn.username ? (
-				<StyledIonButton expand='block' onClick={(event) => handleClick(event)}>Wypożycz</StyledIonButton>
+				<StyledIonButton expand="block" onClick={(event) => handleClick(event)}>
+					Wypożycz
+				</StyledIonButton>
 			) : (
-				<StyledIonButton expand='block' disabled> Zaloguj się, aby wypożyczyć</StyledIonButton>
+				<StyledIonButton expand="block" disabled>
+					{" "}
+					Zaloguj się, aby wypożyczyć
+				</StyledIonButton>
 			)}
 		</>
 	);
 
 	const OutOfStock: JSX.Element = (
 		<>
-			<IonCardSubtitle  color="danger">Brak dostępu!</IonCardSubtitle>
-			<StyledIonButton expand='block' disabled>Wypożycz</StyledIonButton>
+			<IonCardSubtitle color="danger">Brak dostępu!</IonCardSubtitle>
+			<StyledIonButton expand="block" disabled>
+				Wypożycz
+			</StyledIonButton>
 		</>
 	);
 
 	return (
-		<IonCol  sizeSm='12' sizeMd='6' className="ion-justify-content-center">
+		<IonCol sizeSm="12" sizeMd="6" className="ion-justify-content-center">
 			<StyledIonCard>
-				<StyledIonTitle>{props.title}</StyledIonTitle>
-				
-					<StyledIonImage src={props.cover} />
-				
-				<IonCardSubtitle >{props.author}</IonCardSubtitle>
+				<StyledIonCardTitle>{props.title}</StyledIonCardTitle>
+
+				<StyledIonImage src={props.cover} />
+
+				<IonCardSubtitle>{props.author}</IonCardSubtitle>
 				<IonCardSubtitle>{props.category}</IonCardSubtitle>
-				<IonCardSubtitle >
+				<IonCardSubtitle>
 					{props.publisher} {props.year}{" "}
 				</IonCardSubtitle>
 				<StyledIonCardContent>{props.description}</StyledIonCardContent>

@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
-import Book, { Book as IBook } from "./Book/Book";
+import { Book, IBook } from "./Book/Book";
 import { IonContent, IonGrid, IonRow } from "@ionic/react";
 import { v4 as uuid } from "uuid";
 import Header from "../../utils/Header";
@@ -44,11 +44,8 @@ const Books: FC = () => {
 		<IonContent>
 			<Header title="Książki" />
 			<IonGrid fixed>
-			<IonRow className='ion-align-items-center'>
-				{presentBooks(books)}
-			</IonRow>
+				<IonRow className="ion-align-items-center">{presentBooks(books)}</IonRow>
 			</IonGrid>
-			
 		</IonContent>
 	);
 };

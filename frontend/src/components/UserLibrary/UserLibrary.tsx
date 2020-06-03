@@ -1,31 +1,52 @@
 import React, { useContext, FC } from "react";
 import { SignedContext } from "../../contexts/SignedContext";
-import { IonCardTitle, IonCard, IonCardSubtitle, IonImg, IonContent } from "@ionic/react";
-import { Book } from "../Books/Book/Book";
+import {
+	IonCardTitle,
+	IonCard,
+	IonCardSubtitle,
+	IonImg,
+	IonContent,
+	IonGrid,
+	IonRow,
+	IonCol,
+} from "@ionic/react";
+import { IBook, Book } from "../Books/Book/Book";
 import Header from "../../utils/Header";
 import { v4 as uuid } from "uuid";
+import {
+	StyledIonImage,
+	StyledIonCard,
+	StyledIonCardTitle,
+	StyledIonCardSubTitle,
+} from "../Books/Book/Book.style";
 
 const UserLibrary: FC = () => {
 	const { signedIn } = useContext(SignedContext);
 
-	const presentBooks = (books: Book[] & any) =>
+	const presentBooks = (books: IBook[] & any) =>
 		books.map((book: any) => (
 			<>
-				<IonCard key={uuid()}>
-					<IonCardTitle>{book.title}</IonCardTitle>
-					<IonImg> {book.cover} </IonImg>
-					<IonCardSubtitle>
-						{book.author} {book.category}
-					</IonCardSubtitle>
-					<IonCardSubtitle>DO ODDANIA: {book.rentDate}</IonCardSubtitle>
-				</IonCard>
+				<IonCol sizeSm="12" sizeMd="6" className="ion-justify-content-center">
+					<StyledIonCard key={uuid()}>
+						<StyledIonCardTitle>{book.title}</StyledIonCardTitle>
+						<StyledIonImage src={book.cover} />
+						<StyledIonCardSubTitle>
+							{book.author} {book.category}
+						</StyledIonCardSubTitle>
+						<IonCardSubtitle color="danger">
+							DO ODDANIA: {book.rentDate}
+						</IonCardSubtitle>
+					</StyledIonCard>
+				</IonCol>
 			</>
 		));
 
 	return (
 		<IonContent>
 			<Header title="Twoje zamówione ksiązki" />
-			{presentBooks(signedIn.books)}
+			<IonGrid fixed>
+				<IonRow className="ion-align-items-center">{presentBooks(signedIn.books)}</IonRow>
+			</IonGrid>
 		</IonContent>
 	);
 };

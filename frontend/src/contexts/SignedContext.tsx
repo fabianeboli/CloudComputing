@@ -1,5 +1,5 @@
 import React, { createContext, Context, useState, FC } from "react";
-import { Book } from "../components/Books/Book/Book";
+import { IBook } from "../components/Books/Book/Book";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 type IdUserName = {
 	id: string;
 	username: string;
-	books: Book[] | any[];
+	books: IBook[] | any[];
 };
 
 export interface Signed {

@@ -22,11 +22,11 @@ export const StyledIonCardContent = styled(IonCardContent)`
 	text-align: start;
 `;
 
-export const StyledIonTitle = styled(IonCardTitle)`
+export const StyledIonCardTitle = styled(IonCardTitle)`
 	text-align: center;
 	padding: 15px;
 `;
-export const StyledIonSubTitle = styled(IonCardSubtitle)`
+export const StyledIonCardSubTitle = styled(IonCardSubtitle)`
 	text-align: center;
 	padding: 15px;
 `;
