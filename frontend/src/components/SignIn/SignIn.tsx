@@ -1,5 +1,14 @@
 import React, { useState, useContext, FC } from "react";
-import { IonButton, IonInput, IonButtons, IonCard, IonContent, IonRow, IonCol } from "@ionic/react";
+import {
+	IonButton,
+	IonInput,
+	IonButtons,
+	IonCard,
+	IonContent,
+	IonRow,
+	IonCol,
+	IonSpinner,
+} from "@ionic/react";
 import { SignedContext, Signed } from "../../contexts/SignedContext";
 import Header from "../../utils/Header";
 import { url } from "../../utils/url";
@@ -16,9 +25,11 @@ const SignIn: FC = () => {
 	const [password, setPassword] = useState<string | null | undefined>("");
 	const { signedIn, changeSignedIn }: Signed = useContext(SignedContext);
 	const [error, setError] = useState<string>("");
+	const [loader, setLoader] = useState<boolean>(false);
 
 	const handleForm = async (event: MouseEvent): Promise<void> => {
 		event.preventDefault();
+		setLoader(true);
 		setError("");
 
 		const response: Response = await fetch(`${url}/user`);
@@ -39,6 +50,7 @@ const SignIn: FC = () => {
 			setUsername("");
 			setPassword("");
 		}
+		setLoader(false);
 	};
 
 	const SignInForm: JSX.Element = (
@@ -80,15 +92,28 @@ const SignIn: FC = () => {
 		</>
 	);
 
+	const SignUser = (
+		<IonRow className="ion-align-items-center">
+			<IonCol sizeSm="12" sizeMd="6" className="ion-justify-content-center">
+				<IonCard>{signedIn.username ? SignedInGreeting : SignInForm}</IonCard>
+				<h1> {error}</h1>
+			</IonCol>
+		</IonRow>
+	);
+
 	return (
 		<IonContent>
 			<Header title="Zaloguj się" />
-			<IonRow className="ion-align-items-center">
-				<IonCol sizeSm="12" sizeMd="6" className="ion-justify-content-center">
-					<IonCard>{signedIn.username ? SignedInGreeting : SignInForm}</IonCard>
-					<h1> {error}</h1>
-				</IonCol>
-			</IonRow>
+			{loader ? (
+				<IonSpinner name="crescent" color="primary" />
+			) : (
+				<IonRow className="ion-align-items-center">
+					<IonCol sizeSm="12" sizeMd="6" className="ion-justify-content-center">
+						<IonCard>{signedIn.username ? SignedInGreeting : SignInForm}</IonCard>
+						<h1> {error}</h1>
+					</IonCol>
+				</IonRow>
+			)}
 		</IonContent>
 	);
 };

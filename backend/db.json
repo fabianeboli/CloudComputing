@@ -11,18 +11,6 @@
       "password": "janusz",
       "books": [
         {
-          "id": 1,
-          "title": "Kubuś Puchatek",
-          "author": "A.A. Milne",
-          "cover": "https://staticl.poczytaj.pl/374000/kubus-puchatek-milne-alan-alexander-milne,374838-l.jpg",
-          "category": "Literatura dziecięca",
-          "publisher": "Nasza Księgarnia",
-          "year": "2018",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
-          "stock": 4,
-          "rentDate": "Jul 3, 2020"
-        },
-        {
           "id": 2,
           "title": "Sztuka Wojny",
           "author": "Tzu sun",
@@ -31,11 +19,167 @@
           "publisher": "Wydawnictwo Helion",
           "year": "2013",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
+          "stock": 5,
+          "rentDate": "3 lipca 2020"
+        },
+        {
+          "id": 1,
+          "title": "Kubuś Puchatek",
+          "author": "A.A. Milne",
+          "cover": "https://staticl.poczytaj.pl/374000/kubus-puchatek-milne-alan-alexander-milne,374838-l.jpg",
+          "category": "Literatura dziecięca",
+          "publisher": "Nasza Księgarnia",
+          "year": "2018",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
           "stock": 3,
-          "rentDate": "Jul 3, 2020"
+          "rentDate": "3 lipca 2020"
         }
       ],
       "id": 2
+    },
+    {
+      "username": "test4",
+      "password": "test4",
+      "books": [],
+      "id": 3
+    },
+    {
+      "username": "test5",
+      "password": "test5",
+      "books": [],
+      "id": 4
+    },
+    {
+      "username": "test5",
+      "password": "test5",
+      "books": [],
+      "id": 5
+    },
+    {
+      "username": "test5",
+      "password": "test5",
+      "books": [],
+      "id": 6
+    },
+    {
+      "username": "test5",
+      "password": "test5",
+      "books": [],
+      "id": 7
+    },
+    {
+      "username": "test5",
+      "password": "test5",
+      "books": [],
+      "id": 8
+    },
+    {
+      "username": "test5",
+      "password": "test5",
+      "books": [],
+      "id": 9
+    },
+    {
+      "username": "test5",
+      "password": "test5",
+      "books": [],
+      "id": 10
+    },
+    {
+      "username": "test5",
+      "password": "test5",
+      "books": [],
+      "id": 11
+    },
+    {
+      "username": "test5",
+      "password": "test5",
+      "books": [],
+      "id": 12
+    },
+    {
+      "username": "test5",
+      "password": "test5",
+      "books": [],
+      "id": 13
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 14
+    },
+    {
+      "username": "nowy5",
+      "password": "nowy6",
+      "books": [],
+      "id": 15
+    },
+    {
+      "username": "nowy5111",
+      "password": "nowy6111",
+      "books": [],
+      "id": 16
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 17
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 18
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 19
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 20
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 21
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 22
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 23
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 24
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 25
+    },
+    {
+      "username": "test",
+      "password": "test",
+      "books": [],
+      "id": 26
     }
   ],
   "book": [
@@ -48,7 +192,7 @@
       "publisher": "Nasza Księgarnia",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
       "year": "2018",
-      "stock": 3
+      "stock": 2
     },
     {
       "id": 2,
@@ -59,7 +203,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
       "publisher": "Wydawnictwo Helion",
       "year": "2013",
-      "stock": 2
+      "stock": 4
     },
     {
       "id": 3,
@@ -70,7 +214,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper molestie erat eget scelerisque. In mi quam, pellentesque quis ex ac, aliquam porttitor neque. Vivamus iaculis, tellus vel iaculis pretium, arcu magna sollicitudin erat, a rhoncus neque elit a tellus. Mauris porttitor ante facilisis, sollicitudin quam et, imperdiet arcu. Proin ultricies, diam at dignissim venenatis, ligula erat aliquam leo, eget efficitur magna nisl in est. ",
       "publisher": "PWE",
       "year": "2019",
-      "stock": 1
+      "stock": 0
     }
   ]
 }

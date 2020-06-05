@@ -8,6 +8,7 @@ import {
 	IonGrid,
 	IonRow,
 	IonCol,
+	IonSpinner,
 } from "@ionic/react";
 import Header from "../../utils/Header";
 import { url } from "../../utils/url";
@@ -18,6 +19,7 @@ const SignUp: FC = () => {
 	const [username, setUsername] = useState<string | null | undefined>("");
 	const [password, setPassword] = useState<string | null | undefined>("");
 	const [error, setError] = useState<string>("");
+	const [loader, setLoader] = useState<boolean>(false);
 
 	const checkIfExist = async (username: string | null | undefined): Promise<boolean> => {
 		const response = await fetch(`${url}/user`);
@@ -25,17 +27,18 @@ const SignUp: FC = () => {
 		if (response.ok) {
 			const data = await response.json();
 			const checkUsername = data.find((user: any) => user.username === username);
-			!checkUsername && setError("Ten użytkownik już istnieje");
-			return checkUsername ? true : false;
+			console.log(checkUsername);
+			if (!checkUsername) setError("Ten użytkownik już istnieje");
+			console.log("TEST");
+			return checkUsername !== undefined ? true : false;
 		}
 		return false;
 	};
 
 	const handleForm = async (event: MouseEvent): Promise<void> => {
 		event.preventDefault();
+		setLoader(true);
 		setError("");
-
-		if (checkIfExist(username)) return;
 
 		const user = {
 			username,
@@ -49,19 +52,22 @@ const SignUp: FC = () => {
 			body: JSON.stringify(user),
 		};
 
-		const response: Response = await fetch(`${url}/user`, config);
+		// if (await checkIfExist(username)) {
+			const response: Response = await fetch(`${url}/user`, config);
 
-		if (response.ok) {
-			console.log("SIGNED UP NEW USER");
-		} else {
-			console.error(`ERROR: ${response.status}`);
-			setError(`ERROR: ${response.statusText}`);
-			setUsername("");
-			setPassword("");
-		}
+			if (response.ok) {
+				console.log("SIGNED UP NEW USER");
+				setLoader(false);
+			} else {
+				console.error(`ERROR: ${response.status}`);
+				setError(`ERROR: ${response.statusText}`);
+				setUsername("");
+				setPassword("");
+			}
+		setLoader(false);
 	};
 
-	const form = (
+	const form: JSX.Element = (
 		<IonCard>
 			<form onSubmit={(e) => e.preventDefault()}>
 				<IonInput
@@ -85,7 +91,7 @@ const SignUp: FC = () => {
 						type="submit"
 						slot="primary"
 						expand={"full"}
-						onClick={(event: any) => handleForm(event)}
+						onClick={(event) => handleForm(event)}
 					>
 						Zarejestruj się
 					</IonButton>
@@ -94,18 +100,21 @@ const SignUp: FC = () => {
 		</IonCard>
 	);
 
+	const RegisterUser = (
+		<IonGrid>
+			<IonRow className="ion-align-items-center">
+				<IonCol sizeSm="12" sizeMd="6" className="ion-justify-content-center">
+					{form}
+					<h2> {error} </h2>
+				</IonCol>
+			</IonRow>
+		</IonGrid>
+	);
+
 	return (
 		<IonContent>
 			<Header title="Rejestracja" />
-			<IonGrid>
-				<IonRow className="ion-align-items-center">
-					<IonCol sizeSm="12" sizeMd="6" className="ion-justify-content-center">
-						{form}
-						<h2> {error} </h2>
-					</IonCol>
-				</IonRow>
-			</IonGrid>
-			{/* TODO: LOGO */}
+			{loader ? <IonSpinner name="crescent" color="primary" /> : RegisterUser}
 		</IonContent>
 	);
 };
